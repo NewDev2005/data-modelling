@@ -1,0 +1,65 @@
+TASK #1
+
+Courses_table: 
+
+id: integer
+course: string [unique, present]
+title: string [present]
+Description: text
+
+has_many :lessons
+
+lessons_table:
+
+id: integer
+title: string [present]
+body: text
+
+belongs_to :course
+
+
+TASK #2
+
+users_table:
+
+id: integer
+username: string [unique, present]
+email: string [unique, present]
+
+has_one :profile
+
+
+profiles_table:
+
+id: integer
+city: string
+state: string [present]
+Country: string [present]
+age: integer 
+gender: string
+
+belongs_to :users 
+
+TASK #3
+
+users_table:
+
+id: integer
+name: string [present]
+
+has many :pins 
+
+pins_table:
+
+id: integer
+pin: string [present]
+
+has_many :comments
+belongs_to :users 
+
+comments_table:
+
+id: integer
+comment: string
+
+belongs_to :pin
